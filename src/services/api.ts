@@ -7,13 +7,13 @@ const api = axios.create({
 
 class ApiWeatherService {
   async execute(city: string) {
-    const { data: cityWeatherResponse, request } = await api.get<ICityWeather>('', {
+    const { data: cityWeatherResponse } = await api.get<ICityWeather>('', {
       params: {
         q: city
       }
     });
 
-    return {cityWeatherResponse, request};
+    return cityWeatherResponse;
   }
 }
 

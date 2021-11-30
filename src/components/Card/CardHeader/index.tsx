@@ -3,7 +3,9 @@ type Props = {
 }
 function CardHeader({title}: Props)  {
   return (
-    <h4>{title}</h4>
+    <div className="card-header">
+      <h4>{title}</h4>
+    </div>
   );
 }
 
