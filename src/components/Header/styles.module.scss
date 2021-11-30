@@ -1,0 +1,10 @@
+@import '../../styles/colors.scss';
+
+.headerNavbar {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  padding: 10px 0px;
+  background-color: $white;
+  text-align: center;
+}

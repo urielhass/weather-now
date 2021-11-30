@@ -10,5 +10,6 @@ export interface ICityWeather {
       description: string;
       icon: string;
     }
-  ]
+  ],
+  dt: number;
 }
