@@ -1,10 +1,5 @@
 export interface ICityWeather {
-  main: {
-    temp: number;
-    humidity: number;
-    temp_min: number;
-    temp_max: number;
-  }
+  main: IMain
   weather: [{   
       main: string;
       description: string;
@@ -12,4 +7,12 @@ export interface ICityWeather {
     }
   ],
   dt: number;
+}
+
+export interface IMain {
+  temp: number;
+  humidity: number;
+  pressure: number;
+  temp_min: number;
+  temp_max: number;
 }

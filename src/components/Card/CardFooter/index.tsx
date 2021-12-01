@@ -1,13 +1,13 @@
-import {unixToDate} from '../../../Utils/formatter';
+import {unixToDate} from '../../../utils/formatter';
+import styles from './styles.module.scss';
 
 type Props = {
   timestamp: number | undefined;
 }
 function CardFooter({timestamp}: Props) {
-  console.log(timestamp)
   return (
-    <div className="card-footer">
-      <span>Atualizado em: {timestamp !== undefined ? unixToDate(timestamp) : ''}</span>
+    <div className={styles.cardFooter}>
+      <span>Updated at: {timestamp !== undefined ? unixToDate(timestamp) : ''}</span>
     </div>
   );
 }

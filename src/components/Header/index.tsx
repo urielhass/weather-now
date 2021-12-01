@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 function Header() {
   return (
     <header className={styles.headerNavbar}>
-      <img src={logo} height="34" alt="Logo Weather Now" title="Logo Weather Now" />
+      <img src={logo} height="22" alt="Logo Weather Now" title="Logo Weather Now" />
     </header>
   );
 }

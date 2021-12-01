@@ -4,27 +4,53 @@ import { ICityWeather } from '../../../interfaces/ICityWeather';
 import { useEffect, useState } from 'react';
 import { ApiWeatherService } from '../../../services/api';
 import CardLoader from '../CardLoader';
+import styles from './styles.module.scss';
+import CardContentExtra from './CardContentExtra';
+import { colorByTemp, refreshTime } from '../../../utils/helper';
+import CardError from '../CardError';
 
 type Props = {
   city: string;
+  isPrincipal: boolean;
 };
 
-function CardContent({city}: Props) {
+function CardContent({city, isPrincipal}: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [cityWeather, setCityWeather] = useState<ICityWeather | null>(null);
 
-  useEffect(() => {
+  function refresh() {
     setLoading(true);
     const service = new ApiWeatherService();
     service.execute(city).then((cityWeatherResponse) => {
       setCityWeather(cityWeatherResponse);
     }).catch(({message}) => {
-      console.log(message);
       setError(true);
     }).finally(() => setLoading(false));
-    
+  }
+
+  useEffect(() => {
+    refresh();
+
+    setInterval(() => {
+      refresh();
+    }, refreshTime())
   }, [city])
+
+  function textColor(color: string) {
+    switch(color) {
+      case 'red':
+        return styles.red;
+
+      case 'blue':
+        return styles.blue;
+
+      case 'orange':
+        return styles.orange;
+    }
+
+    return '';
+  }
 
   if (loading) {
     return (
@@ -35,21 +61,28 @@ function CardContent({city}: Props) {
 
   if (error) {
     return (
-      <>
-        <div className="card-content">
-          algo deu errado, tente novamente
-        </div>
-        <CardFooter timestamp={cityWeather?.dt}></CardFooter>
-      </>
+      <div className={styles.cardError}>
+        <CardError />
+        <button onClick={refresh} className={styles.cardBtn}>Try Again</button>
+      </div>
     );
   }
 
   return (
     <>
-      <div className="card-content">
-        {cityWeather?.main.temp}
+      <div className={styles.cardContent}>
+          <span className={textColor(colorByTemp(cityWeather?.main.temp))}>
+            {cityWeather?.main.temp !== undefined ? Math.round(cityWeather?.main.temp) : 'NaN'}º
+          </span>
       </div>
-      <CardFooter timestamp={cityWeather?.dt}></CardFooter>
+      { isPrincipal ? 
+        <CardContentExtra 
+          humidity={cityWeather?.main.humidity}
+          pressure={cityWeather?.main.pressure}
+        /> : 
+        '' 
+      }
+      <CardFooter timestamp={cityWeather?.dt} />
     </>
   );
 }

@@ -1,31 +1,31 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: local('Helvetica'), url('./assets/fonts/Helvetica.ttf'), format('truetype');
+}
+
+html, body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
 body {
-  background-color: #f1f1f1;
-}
-.home-section {
-  background-color: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #F1F1F1;
+  min-height: 100vh;
+  display: block;
+  margin: 0;
 }
 
-.card {
-  margin: 20px;
-  box-shadow: 0 3px 10px rgba(51, 51, 51, 0.1);
-  background-color: white;
+#root {
+  height: 100%;
 }
 
-.card-header {
-  border-bottom: 2px solid #EBEBEB;
-}
+/*
 
-.card-content {
-  padding: 20px;
-}
-
-.card-footer {
-  padding: 20px;
-}
 
 .card-footer-extra-info {
   display: flex;
@@ -49,4 +49,4 @@ body {
 
 .card-loader {
   padding: 20px;
-}
+} */

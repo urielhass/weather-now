@@ -1,0 +1,12 @@
+@import './../../../styles/colors.scss';
+
+.cardHeader {
+  border-bottom: 1px solid $grey-medium;
+  padding: 10px;
+  text-align: center;
+  h4 {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: $grey-dark;
+  }
+}

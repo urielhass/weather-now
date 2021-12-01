@@ -1,0 +1,11 @@
+@import '../../../styles/colors.scss';
+
+.cardFooter {
+  padding: 8px;
+  text-align: center;
+  background-color: $grey-light-opacity;
+  > span {
+    font-size: 10px;
+    color: $grey-dark-medium
+  }
+}

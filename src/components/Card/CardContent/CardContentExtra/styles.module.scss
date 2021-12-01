@@ -1,0 +1,19 @@
+@import '../../../../styles/colors.scss';
+.cardContentExtra {
+  background-color: $grey-light-opacity;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  div {
+    padding: 10px;
+  }
+  strong, span {
+    color: $grey-dark-medium
+  }
+  strong {
+    font-size: 1.1rem;
+  }
+  span {
+    font-size: 0.75rem;
+  }
+}

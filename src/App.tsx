@@ -1,13 +1,13 @@
-import './App.css';
-import { Home } from './screens/Home';
+import Home from './screens/Home';
 import Header from './components/Header';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header></Header>
       <Home></Home>
-    </div>
+    </>
   );
 }
 
