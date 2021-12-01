@@ -4,10 +4,13 @@
   padding: 20px;
   text-align: center;
 
-  > span {
+  .cardTemp {
     font-size: 6rem;
     font-weight: 500;
-
+    .cardContentGrau {
+      font-size: 3rem;
+      vertical-align: super;
+    }
   }
   .red {
     color: $red;

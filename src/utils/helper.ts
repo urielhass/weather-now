@@ -31,8 +31,6 @@ function refreshTime() {
     refreshTime = 10;
   }
 
-  console.log(refreshTime);
-
   return refreshTime * 60 * 1000
 }
 

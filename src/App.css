@@ -7,7 +7,7 @@ html, body, * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 html, body {
@@ -23,30 +23,3 @@ body {
 #root {
   height: 100%;
 }
-
-/*
-
-
-.card-footer-extra-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-footer-extra-info > div:nth-child(1){
-  margin-right: 10px;
-}
-
-.card-footer-extra-info > div > span{
-  text-align: center;
-  display: block;
-}
-
-
-.text-center {
-  text-align: center;
-}
-
-.card-loader {
-  padding: 20px;
-} */

@@ -23,6 +23,7 @@ function CardContent({city, isPrincipal}: Props) {
     setLoading(true);
     const service = new ApiWeatherService();
     service.execute(city).then((cityWeatherResponse) => {
+      setError(false);
       setCityWeather(cityWeatherResponse);
     }).catch(({message}) => {
       setError(true);
@@ -71,9 +72,9 @@ function CardContent({city, isPrincipal}: Props) {
   return (
     <>
       <div className={styles.cardContent}>
-          <span className={textColor(colorByTemp(cityWeather?.main.temp))}>
-            {cityWeather?.main.temp !== undefined ? Math.round(cityWeather?.main.temp) : 'NaN'}º
-          </span>
+          <div className={textColor(colorByTemp(cityWeather?.main.temp)) + " " + styles.cardTemp}>
+            {cityWeather?.main.temp !== undefined ? Math.round(cityWeather?.main.temp) : 'NaN'}<span className={styles.cardContentGrau}>º</span>
+          </div>
       </div>
       { isPrincipal ? 
         <CardContentExtra 
