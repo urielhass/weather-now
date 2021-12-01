@@ -1,12 +1,13 @@
 export interface ICityWeather {
   main: IMain
-  weather: [{   
-      main: string;
-      description: string;
-      icon: string;
-    }
-  ],
+  weather: [IWeather],
   dt: number;
+}
+
+export interface IWeather {
+  main: string;
+  description: string;
+  icon: string;
 }
 
 export interface IMain {
