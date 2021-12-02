@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0"
+    "@types/axios": "^0.14.0",
+    "msw": "^0.35.0"
   }
 }

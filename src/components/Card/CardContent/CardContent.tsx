@@ -81,7 +81,7 @@ export function CardContent({city, isPrincipal}: Props) {
   return (
     <>
       <div className={styles.cardContent}>
-          <div className={textColor(colorByTemp(cityWeather?.main.temp)) + " " + styles.cardTemp}>
+          <div className={textColor(colorByTemp(cityWeather?.main.temp)) + " " + styles.cardTemp} title={city + ' Weather'}>
             {cityWeather?.main.temp !== undefined && Math.round(cityWeather?.main.temp)}<span className={styles.cardContentGrau}>º</span>
           </div>
       </div>
