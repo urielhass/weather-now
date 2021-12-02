@@ -3,7 +3,7 @@ Esse projeto foi criado utilizando como template o [Create React App](https://gi
 Aplicação está escrita em React, Typescript e utiliza SCSS.
 
 ## Gerenciador de pacotes
-Está sendo utilizado o `yarn` para gerenciar os pacotes da aplicação.\
+Está sendo utilizado o `yarn` para gerenciar os pacotes da aplicação.
 
 ## Sobre o Projeto
 Projeto criado para apresentação do clima de 3 cidades: Nairobi, Urubici e Nuuk.\
