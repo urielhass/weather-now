@@ -1,6 +1,7 @@
 export interface ICityWeather {
-  main: IMain
-  weather: [IWeather],
+  main: IMain;
+  name: string;
+  weather: [IWeather];
   dt: number;
 }
 
